@@ -12,7 +12,7 @@ const About = (props) => {
   return (
     <div>
       <h3>About</h3>
-      <p>Welcome to the About page</p>
+      <h1>React Weather project created to learn React</h1>
     </div>
 );
 }
