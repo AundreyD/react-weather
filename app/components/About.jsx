@@ -11,8 +11,8 @@ const React = require('react');
 const About = (props) => {
   return (
     <div>
-      <h3>About</h3>
-      <h1>React Weather project created to learn React</h1>
+      <h1 className=" text-center page-title">About</h1>
+      <h3>React Weather project created to learn React</h3>
     </div>
 );
 }
