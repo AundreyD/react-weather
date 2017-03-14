@@ -5,16 +5,16 @@ module.exports = {
     'script!jquery/dist/jquery.min.js',
     'script!foundation-sites/dist/foundation.min.js',
     './app/app.jsx'
-],
-externals: {
-  jquery: 'jQuery'
-},
-plugins: [
-  new webpack.ProvidePlugin({
-    '$': 'jquery',
-    'jQuery': 'jquery'
-  })
-],
+  ],
+  externals: {
+    jquery: 'jQuery'
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery'
+    })
+  ],
   output: {
     path: __dirname,
     filename: './public/bundle.js'
@@ -25,13 +25,13 @@ plugins: [
       Main: 'app/components/Main.jsx',
       Nav: 'app/components/Nav.jsx',
       Weather: 'app/components/Weather.jsx',
-      About: 'app/components/About.jsx',
-      Examples: 'app/components/Examples.jsx',
       WeatherForm: 'app/components/WeatherForm.jsx',
       WeatherMessage: 'app/components/WeatherMessage.jsx',
-      ErrorModal: 'app/components/ErrorModal.jsx',
+      About: 'app/components/About.jsx',
+      Examples: 'app/components/Examples.jsx',
       openWeatherMap: 'app/api/openWeatherMap.jsx',
-      applicationStyles: 'app/styles/app.css'
+      ErrorModal: 'app/components/ErrorModal.jsx',
+      applicationStyles: 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -47,5 +47,5 @@ plugins: [
       }
     ]
   },
-  devtool: 'eval-source-map'
+  devtool: 'cheap-module-eval-source-map'
 };
