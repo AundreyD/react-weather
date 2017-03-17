@@ -26,15 +26,31 @@ const Weather = React.createClass({
       console.log()
       this.setState({
         isLoading: false,
-        errorMessage: e.message
+        errorMessage: e.message,
+        location: undefined,
+        temp: undefined
       });
         alert(`Error: ${errorMessage}`);
         console.log(e)
     });
   },
+  componentDidMount: function(){
+    let location = this.props.location.query.location;
+    if(location && location.length > 0){
+      this.handleSearch(location);
+      window.location.hash = '#/';
+    }
+
+  },
+  componentWillReceiveProps: function(newProps){
+    let location = newProps.location.query.location;
+    if(location && location.length > 0){
+      this.handleSearch(location);
+      window.location.hash = '#/';
+  }
+},
   render: function(){
     let {isLoading, temp, location, errorMessage} = this.state;
-
     function renderMessage(){
       if(isLoading){
         return <h3 className="text-center ">Fetching Weather...</h3>;
